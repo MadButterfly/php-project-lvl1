@@ -1,0 +1,16 @@
+{
+    "name": "hexlet/code",
+    "description": "Brain games - via Hexlet course",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Katya C",
+            "email": "mad_butterfly@mail.ru"
+        }
+    ],
+	"license": "MIT",
+    "require": {},
+	"bin": [
+  		"bin/brain-games"
+	]
+}
