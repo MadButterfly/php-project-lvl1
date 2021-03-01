@@ -25,6 +25,11 @@ function brainProgression()
     game('brain-progression');
 }
 
+function brainPrime()
+{
+    game('brain-prime');
+}
+
 
 function game(string $game)
 {
@@ -68,6 +73,9 @@ function gameRules($game)
         case 'brain-progression':
             return 'What number is missing in the progression?';
 
+        case 'brain-prime':
+            return 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
         default:
             return '';
     }
@@ -87,6 +95,9 @@ function gameRound($game)
 
         case 'brain-progression':
             return roundBrainProgression();
+
+        case 'brain-prime':
+            return roundBrainPrime();
 
         default:
             return;
@@ -162,4 +173,22 @@ function roundBrainProgression()
     $question = implode(' ', $progression);
     echo("Question: $question" . PHP_EOL);
     return $answer;
+}
+
+function roundBrainPrime()
+{
+    $number = rand(0, 999);
+    echo("Question: $number" . PHP_EOL);
+    return isPrime($number) ? 'yes' : 'no';
+}
+
+function isPrime(int $number)
+{
+    $assumption = ceil($number / 2) + 1;
+    for ($i = $assumption; $i > 1; $i--) {
+        if ($number % $i == 0) {
+            return false;
+        }
+    }
+    return true;
 }
