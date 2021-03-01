@@ -64,10 +64,10 @@ function gameRules($game)
 
         case 'brain-gcd':
             return 'Find the greatest common divisor of given numbers.';
-            
+
         case 'brain-progression':
             return 'What number is missing in the progression?';
-            
+
         default:
             return '';
     }
@@ -81,13 +81,13 @@ function gameRound($game)
 
         case 'brain-calc':
             return roundBrainCalc();
-            
+
         case 'brain-gcd':
             return roundBrainGcd();
-            
+
         case 'brain-progression':
             return roundBrainProgression();
-            
+
         default:
             return;
     }
@@ -136,7 +136,7 @@ function roundBrainGcd()
     }
     // otherwise start checking from half of minimal value rounded up + 1
     $min = $firstNum < $secondNum ? $firstNum : $secondNum;
-    $assumption = ceil($min/2) + 1;
+    $assumption = ceil($min / 2) + 1;
     for ($i = $assumption; $i > 0; $i--) {
         if ($firstNum % $i == 0 && $secondNum % $i == 0) {
             return $i;
@@ -150,12 +150,12 @@ function roundBrainProgression()
     $step = rand(2, 5);
     $element = rand(0, 99);
     $progression = [$element];
-    
+
     for ($i = 0, $elementsToAdd = $length - 1; $i < $elementsToAdd; $i++) {
         $element += $step;
         $progression[] = $element;
     }
-    
+
     $hiddenElement = array_rand($progression);
     $answer = $progression[$hiddenElement];
     $progression[$hiddenElement] = '..';
