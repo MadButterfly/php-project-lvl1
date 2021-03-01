@@ -22,7 +22,13 @@
 	"autoload": {
 		"files": [
 			"src/Cli.php",
-			"src/GameLib.php"
+			"src/GameLib.php",
+            "src/Engine.php",
+            "src/games/brain-even.php",
+            "src/games/brain-calc.php",
+            "src/games/brain-gcd.php",
+            "src/games/brain-progression.php",
+            "src/games/brain-prime.php"
 		]
 	  },
     "require-dev": {
