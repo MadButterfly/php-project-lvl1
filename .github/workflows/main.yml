@@ -1,38 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@MadButterfly 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-hexlet-boilerplates
-/
-php-package
-5
-6386
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-php-package/.github/workflows/workflow.yml
-@ava239
-ava239 fix phpstan
-Latest commit af5b1d7 on 25 Aug 2020
- History
- 4 contributors
-@corsicanec82@zhabinka@fey@ava239
-43 lines (39 sloc)  1.23 KB
-  
 # Name of workflow
 name: PHP CI
 
