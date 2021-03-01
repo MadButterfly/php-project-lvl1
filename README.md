@@ -5,5 +5,8 @@
 
 [![Lint](https://github.com/MadButterfly/php-project-lvl1/actions/workflows/main.yml/badge.svg)](https://github.com/MadButterfly/php-project-lvl1/actions/workflows/main.yml)
 
-brain-even:
+### Brain even:
 [![asciicast](https://asciinema.org/a/CijILixeuGOWcVHdgCob5PgVC.svg)](https://asciinema.org/a/CijILixeuGOWcVHdgCob5PgVC)
+
+### Brain calc:
+[![asciicast](https://asciinema.org/a/wHFJSvfVp0nomvXBOUGs8yycs.svg)](https://asciinema.org/a/wHFJSvfVp0nomvXBOUGs8yycs)
