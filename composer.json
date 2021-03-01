@@ -22,7 +22,6 @@
 	"autoload": {
 		"files": [
 			"src/Cli.php",
-			"src/GameLib.php",
             "src/Engine.php",
             "src/games/brain-even.php",
             "src/games/brain-calc.php",
