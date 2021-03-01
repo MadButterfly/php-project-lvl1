@@ -15,7 +15,8 @@
 	"bin": [
   		"bin/brain-games",
         "bin/brain-even",
-		"bin/brain-calc"
+		"bin/brain-calc",
+        "bin/brain-progression"
 	],
 	"autoload": {
 		"files": [

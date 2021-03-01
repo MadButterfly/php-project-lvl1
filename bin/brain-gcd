@@ -2,7 +2,6 @@
 
 <?php
 
-use function Brain\Games\Cli\greetings;
 use function Brain\Games\GameLib\brainGcd;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
@@ -13,6 +12,4 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-
-$userName = greetings();
-brainGcd($userName);
+brainGcd();

@@ -2,7 +2,6 @@
 
 <?php
 
-use function Brain\Games\Cli\greetings;
 use function Brain\Games\GameLib\brainCalc;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
@@ -14,5 +13,4 @@ if (file_exists($autoloadPath1)) {
 }
 
 
-$userName = greetings();
-brainCalc($userName);
+brainCalc();

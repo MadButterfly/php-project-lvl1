@@ -2,29 +2,36 @@
 
 namespace Brain\Games\GameLib;
 
+use function Brain\Games\Cli\greetings;
 use function cli\prompt;
 
-function brainEven(string $userName)
+function brainEven()
 {
-    game($userName, 'brain-even');
+    game('brain-even');
 }
 
-function brainCalc(string $userName)
+function brainCalc()
 {
-    game($userName, 'brain-calc');
+    game('brain-calc');
 }
 
-function brainGcd(string $userName)
+function brainGcd()
 {
-    game($userName, 'brain-gcd');
+    game('brain-gcd');
+}
+
+function brainProgression()
+{
+    game('brain-progression');
 }
 
 
-function game(string $userName, string $game)
+function game(string $game)
 {
     $tries = 3;
     $correctAnswers = 0;
 
+    $userName = greetings();
     $rules = gameRules($game);
     echo($rules . PHP_EOL);
 
@@ -58,6 +65,9 @@ function gameRules($game)
         case 'brain-gcd':
             return 'Find the greatest common divisor of given numbers.';
             
+        case 'brain-progression':
+            return 'What number is missing in the progression?';
+            
         default:
             return '';
     }
@@ -74,7 +84,10 @@ function gameRound($game)
             
         case 'brain-gcd':
             return roundBrainGcd();
-
+            
+        case 'brain-progression':
+            return roundBrainProgression();
+            
         default:
             return;
     }
@@ -129,4 +142,24 @@ function roundBrainGcd()
             return $i;
         }
     }
+}
+
+function roundBrainProgression()
+{
+    $length = 10;
+    $step = rand(2, 5);
+    $element = rand(0, 99);
+    $progression = [$element];
+    
+    for ($i = 0, $elementsToAdd = $length - 1; $i < $elementsToAdd; $i++) {
+        $element += $step;
+        $progression[] = $element;
+    }
+    
+    $hiddenElement = array_rand($progression);
+    $answer = $progression[$hiddenElement];
+    $progression[$hiddenElement] = '..';
+    $question = implode(' ', $progression);
+    echo("Question: $question" . PHP_EOL);
+    return $answer;
 }
