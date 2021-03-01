@@ -1,0 +1,67 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@MadButterfly 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+
+hexlet-boilerplates
+/
+php-package
+5
+6386
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+php-package/.github/workflows/workflow.yml
+@ava239
+ava239 fix phpstan
+Latest commit af5b1d7 on 25 Aug 2020
+ History
+ 4 contributors
+@corsicanec82@zhabinka@fey@ava239
+43 lines (39 sloc)  1.23 KB
+  
+# Name of workflow
+name: PHP CI
+
+# Trigger the workflow on push or pull request
+on:
+  - push
+  - pull_request
+
+jobs:
+  build:
+
+    # The type of machine to run the job on
+    runs-on: ubuntu-latest
+
+    steps:
+        # Check-out repository under GitHub workspace
+        # https://github.com/actions/checkout
+      - uses: actions/checkout@v2
+        # Step's name
+      - name: Setup PHP
+        # Action gives to setup the PHP environment to test application
+        # https://github.com/shivammathur/setup-php
+        uses: shivammathur/setup-php@v2
+        with:
+          # Specify the PHP version
+          php-version: '7.4'
+      - name: Install
+        # Install project
+        run: make install
+      - name: Run linter
+        # Run Linter
+        run: make lint
