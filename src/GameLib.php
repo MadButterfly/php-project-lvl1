@@ -14,6 +14,12 @@ function brainCalc(string $userName)
     game($userName, 'brain-calc');
 }
 
+function brainGcd(string $userName)
+{
+    game($userName, 'brain-gcd');
+}
+
+
 function game(string $userName, string $game)
 {
     $tries = 3;
@@ -49,6 +55,9 @@ function gameRules($game)
         case 'brain-calc':
             return 'What is the result of the expression?';
 
+        case 'brain-gcd':
+            return 'Find the greatest common divisor of given numbers.';
+            
         default:
             return '';
     }
@@ -62,6 +71,9 @@ function gameRound($game)
 
         case 'brain-calc':
             return roundBrainCalc();
+            
+        case 'brain-gcd':
+            return roundBrainGcd();
 
         default:
             return;
@@ -97,5 +109,24 @@ function roundBrainCalc()
 
         case '*':
             return $firstNum * $secondNum;
+    }
+}
+
+function roundBrainGcd()
+{
+    $firstNum = rand(1, 99);
+    $secondNum = rand(1, 99);
+    echo("Question: $firstNum $secondNum" . PHP_EOL);
+    // if numbers are equal - return first one
+    if ($firstNum === $secondNum) {
+        return $firstNum;
+    }
+    // otherwise start checking from half of minimal value rounded up + 1
+    $min = $firstNum < $secondNum ? $firstNum : $secondNum;
+    $assumption = ceil($min/2) + 1;
+    for ($i = $assumption; $i > 0; $i--) {
+        if ($firstNum % $i == 0 && $secondNum % $i == 0) {
+            return $i;
+        }
     }
 }
