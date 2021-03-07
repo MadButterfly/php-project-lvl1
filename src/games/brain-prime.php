@@ -8,7 +8,7 @@ const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const MIN_VALUE = 0;
 const MAX_VALUE = 999;
 
-function brainPrime(): string
+function brainPrime(): void
 {
     game(
         function () {

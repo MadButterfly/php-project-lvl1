@@ -9,7 +9,7 @@ const OPERATIONS = ['+', '-', '*'];
 const MIN_VALUE = 0;
 const MAX_VALUE = 99;
 
-function brainCalc(): int
+function brainCalc(): void
 {
     game(
         function () {

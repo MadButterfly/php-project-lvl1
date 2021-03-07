@@ -10,7 +10,7 @@ const MIN_STEP = 2;
 const MAX_STEP = 5;
 const MAX_START_ELEMENT = 99;
 
-function brainProgression(): int
+function brainProgression(): void
 {
     game(
         function () {
