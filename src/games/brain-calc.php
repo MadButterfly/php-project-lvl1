@@ -9,7 +9,7 @@ const OPERATIONS = ['+', '-', '*'];
 const MIN_VALUE = 0;
 const MAX_VALUE = 99;
 
-function brainCalc()
+function brainCalc(): int
 {
     game(
         function () {
@@ -24,7 +24,7 @@ function brainCalc()
     );
 }
 
-function getOperationResult($firstNum, $secondNum, $operation)
+function getOperationResult(int $firstNum, int $secondNum, string $operation): int
 {
     switch ($operation) {
         case '+':

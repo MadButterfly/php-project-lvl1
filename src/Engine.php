@@ -8,7 +8,7 @@ use function cli\line;
 
 const TRIES = 3;
 
-function game(callable $gameRound, string $rules)
+function game(callable $gameRound, string $rules): void
 {
     $correctAnswers = 0;
     $userName = greetings();

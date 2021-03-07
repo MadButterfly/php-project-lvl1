@@ -8,7 +8,7 @@ const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const MIN_VALUE = 0;
 const MAX_VALUE = 999;
 
-function brainPrime()
+function brainPrime(): string
 {
     game(
         function () {
@@ -20,7 +20,7 @@ function brainPrime()
     );
 }
 
-function isPrime(int $number)
+function isPrime(int $number): bool
 {
     $assumption = floor($number / 2) + 1;
     for ($i = $assumption; $i > 1; $i--) {

@@ -8,7 +8,7 @@ const RULES = 'Answer "yes" if the number is even, otherwise answer "no"';
 const MIN_VALUE = 0;
 const MAX_VALUE = 999;
 
-function brainEven()
+function brainEven(): string
 {
     game(
         function () {
@@ -20,7 +20,7 @@ function brainEven()
     );
 }
 
-function isEven(int $num)
+function isEven(int $num): bool
 {
     return $num % 2 == 0;
 }

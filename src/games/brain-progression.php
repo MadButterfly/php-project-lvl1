@@ -10,7 +10,7 @@ const MIN_STEP = 2;
 const MAX_STEP = 5;
 const MAX_START_ELEMENT = 99;
 
-function brainProgression()
+function brainProgression(): int
 {
     game(
         function () {
@@ -23,7 +23,7 @@ function brainProgression()
     );
 }
 
-function buildProgression()
+function buildProgression(): array
 {
     $step = rand(MIN_STEP, MAX_STEP);
     $element = rand(0, MAX_START_ELEMENT);
@@ -36,7 +36,7 @@ function buildProgression()
     return $progression;
 }
 
-function hideElement(array $progression, int $index)
+function hideElement(array $progression, int $index): void
 {
     $progression[$index] = '..';
     $question = implode(' ', $progression);

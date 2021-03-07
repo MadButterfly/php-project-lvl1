@@ -8,7 +8,7 @@ const RULES = 'Find the greatest common divisor of given numbers.';
 const MIN_VALUE = 1;
 const MAX_VALUE = 99;
 
-function brainGcd()
+function brainGcd(): int
 {
     game(
         function () {
@@ -21,7 +21,7 @@ function brainGcd()
     );
 }
 
-function getGcd(int $firstNum, int $secondNum)
+function getGcd(int $firstNum, int $secondNum): int
 {
     // if numbers are equal - return the first one
     if ($firstNum === $secondNum) {
