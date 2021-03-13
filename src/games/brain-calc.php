@@ -39,5 +39,5 @@ function getOperationResult(int $firstNum, int $secondNum, string $operation): i
             $result = $firstNum * $secondNum;
             break;
     }
-    return $result;
+    return $result ?? -1;
 }

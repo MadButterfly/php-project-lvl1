@@ -29,12 +29,12 @@ function getGcd(int $firstNum, int $secondNum): int
     }
     // otherwise start checking from half of minimal value rounded down + 1
     $min = $firstNum < $secondNum ? $firstNum : $secondNum;
-    $assumption = floor($min / 2) + 1;
+    $assumption = (int)floor($min / 2) + 1;
     for ($i = $assumption; $i > 0; $i--) {
         if ($firstNum % $i == 0 && $secondNum % $i == 0) {
             $result = $i;
             break;
         }
     }
-    return $i;
+    return $result ?? 1;
 }
