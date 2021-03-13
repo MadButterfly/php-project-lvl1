@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Games;
+namespace Brain\Games\Games\Progression;
 
 use function Brain\Games\Engine\game;
 
@@ -13,9 +13,9 @@ const MAX_START_ELEMENT = 99;
 function brainProgression(): void
 {
     game(
-        function () {
+        function (): int {
             $progression = buildProgression();
-            $hiddenElementIndex = array_rand($progression);
+            $hiddenElementIndex = (int) array_rand($progression);
             hideElement($progression, $hiddenElementIndex);
             return $progression[$hiddenElementIndex];
         },

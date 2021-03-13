@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Games;
+namespace Brain\Games\Games\Even;
 
 use function Brain\Games\Engine\game;
 
@@ -11,7 +11,7 @@ const MAX_VALUE = 999;
 function brainEven(): void
 {
     game(
-        function () {
+        function (): string {
             $number = rand(MIN_VALUE, MAX_VALUE);
             echo("Question: $number" . PHP_EOL);
             return isEven($number) ? 'yes' : 'no';

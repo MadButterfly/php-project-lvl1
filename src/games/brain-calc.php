@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Games;
+namespace Brain\Games\Games\Calc;
 
 use function Brain\Games\Engine\game;
 
@@ -12,7 +12,7 @@ const MAX_VALUE = 99;
 function brainCalc(): void
 {
     game(
-        function () {
+        function (): int {
             $firstNum = rand(MIN_VALUE, MAX_VALUE);
             $secondNum = rand(MIN_VALUE, MAX_VALUE);
             $operationKey = array_rand(OPERATIONS);
@@ -28,12 +28,16 @@ function getOperationResult(int $firstNum, int $secondNum, string $operation): i
 {
     switch ($operation) {
         case '+':
-            return $firstNum + $secondNum;
+            $result = $firstNum + $secondNum;
+            break;
 
         case '-':
-            return $firstNum - $secondNum;
+            $result = $firstNum - $secondNum;
+            break;
 
         case '*':
-            return $firstNum * $secondNum;
+            $result = $firstNum * $secondNum;
+            break;
     }
+    return $result;
 }

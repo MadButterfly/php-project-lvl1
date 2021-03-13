@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\Games;
+namespace Brain\Games\Games\Gcd;
 
 use function Brain\Games\Engine\game;
 
@@ -11,7 +11,7 @@ const MAX_VALUE = 99;
 function brainGcd(): void
 {
     game(
-        function () {
+        function (): int {
             $firstNum = rand(MIN_VALUE, MAX_VALUE);
             $secondNum = rand(MIN_VALUE, MAX_VALUE);
             echo("Question: $firstNum $secondNum" . PHP_EOL);
@@ -32,7 +32,9 @@ function getGcd(int $firstNum, int $secondNum): int
     $assumption = floor($min / 2) + 1;
     for ($i = $assumption; $i > 0; $i--) {
         if ($firstNum % $i == 0 && $secondNum % $i == 0) {
-            return $i;
+            $result = $i;
+            break;
         }
     }
+    return $i;
 }

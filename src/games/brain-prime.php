@@ -11,7 +11,7 @@ const MAX_VALUE = 999;
 function brainPrime(): void
 {
     game(
-        function () {
+        function (): string {
             $number = rand(MIN_VALUE, MAX_VALUE);
             echo("Question: $number" . PHP_EOL);
             return isPrime($number) ? 'yes' : 'no';
