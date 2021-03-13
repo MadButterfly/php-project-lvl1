@@ -27,10 +27,8 @@ function getGcd(int $firstNum, int $secondNum): int
     if ($firstNum === $secondNum) {
         return $firstNum;
     }
-    // otherwise start checking from half of minimal value rounded down + 1
     $min = $firstNum < $secondNum ? $firstNum : $secondNum;
-    $assumption = (int)floor($min / 2) + 1;
-    for ($i = $assumption; $i > 0; $i--) {
+    for ($i = $min; $i > 0; $i--) {
         if ($firstNum % $i == 0 && $secondNum % $i == 0) {
             $result = $i;
             break;
